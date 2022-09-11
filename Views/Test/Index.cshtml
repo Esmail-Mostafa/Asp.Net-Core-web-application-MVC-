@@ -1,0 +1,84 @@
+﻿@inject DemoTest.BL.InterFace.IDepartmentRepo department
+@inject DemoTest.BL.InterFace.IEmployeeRepo employee
+
+@{
+    ViewData["Title"] = "inject";
+}
+@section bootstrapSelect{
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+
+}
+<style>
+    th {
+        text-align: center !important;
+    }
+</style>
+
+<table class="table table-striped table-hover table-bordered text-center font-weight-bold">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in employee.Get())
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<table class="table table-striped table-hover table-bordered text-center font-weight-bold">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in department.Get())
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Code</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<select>
+    <option>choose employee</option>
+    @foreach (var item in employee.Get())
+    {
+        <option value="@item.Id">
+            @item.Name
+
+        </option>
+    }
+
+</select>
+
+
+<select>
+    <option>choose Department</option>
+    @foreach (var item in department.Get())
+    {
+        <option value="@item.Id">
+            @item.Name
+
+        </option>
+    }
+
+
+</select>

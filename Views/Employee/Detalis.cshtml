@@ -1,0 +1,76 @@
+﻿@model DemoTest.BL.Model.EmployeeVM
+@{
+    ViewData["Title"] = "Detalis";
+}
+
+
+
+
+
+
+<div class="block-header">
+    <h2>@SharedLocalizer["Detalis"]</h2>
+</div>
+
+
+
+
+
+
+<label asp-for="Name">@SharedLocalizer["Emplyoo Name"]</label>
+    <input type="text" class="form-control" asp-for="Name" readonly/>
+    <br />
+
+
+    <label asp-for="Salary">@SharedLocalizer["Salary"]</label>
+    <input type="text" class="form-control" asp-for="Salary"readonly />
+    <br />
+    <br />
+
+
+    <label asp-for="Email">@SharedLocalizer["Email"]</label>
+    <input type="email" class="form-control" asp-for="Email"readonly />
+    <br />
+    <br />
+
+
+    <label asp-for="Address">@SharedLocalizer["Address"]</label>
+    <input type="text" class="form-control" asp-for="Address"readonly />
+    <br />
+    <br />
+
+    <label asp-for="Notes">@SharedLocalizer["Notes"]</label>
+    <textarea class="form-control" asp-for="Notes" readonly>  </textarea>
+    <br />
+
+
+    <label asp-for="HireDate">@SharedLocalizer["HireDate"]</label>
+    <input type="date" class="form-control" asp-for="HireDate" readonly />
+    <br />
+    <br />
+
+    <div class="demo-checkbox">
+        <input type="checkbox" asp-for="IsActive" checked="" readonly>
+        <label asp-for="IsActive">@SharedLocalizer["IsActive"]</label>
+    </div>
+
+    <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.DepartmentList" >
+        <option>chosse Department</option>
+    </select>
+
+
+    <center>
+        <a asp-controller="Employee" asp-action="Index" class="btn btn-primary">back</a>
+        <a asp-controller="Employee" asp-action="Edit" asp-route-Id="@Model.Id" class="btn btn-primary">Update </a>
+        <a asp-controller="Employee" asp-action="Delete" asp-route-Id="@Model.Id" class="btn btn-danger"> Delete</a>
+    </center>
+
+
+
+
+
+
+
+
+
+

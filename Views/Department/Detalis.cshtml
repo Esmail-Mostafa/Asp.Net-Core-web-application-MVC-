@@ -1,0 +1,22 @@
+﻿@model DemoTest.BL.Model.DepartmentVM
+@{
+    ViewData["Title"] = "Detalis";
+}
+
+
+
+
+<label asp-for="Name">@SharedLocalizer["Department Name"]</label>
+<input type="text" class="form-control" asp-for="Name" readonly />
+<br />
+
+
+<label asp-for="Code">@SharedLocalizer["Department Code"]</label>
+<input type="text" class="form-control" asp-for="Code"readonly />
+<br />
+<br />
+<center>
+    <a asp-controller="Department" asp-action="Edit" class="btn btn-primary">Update </a>
+    <a asp-controller="Department" asp-action="Delete" class="btn btn-danger"> Delete</a>
+</center>
+

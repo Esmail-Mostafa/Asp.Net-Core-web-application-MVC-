@@ -1,0 +1,27 @@
+﻿@model IdentityUser;
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<form class="form-group" asp-controller="Users" asp-action="Delete">
+
+
+
+
+    <label asp-for="Id">id </label>
+    <input type="text" class="form-control" asp-for="Id" readonly/>
+    <br />
+
+
+    <label asp-for="Email">Email </label>
+    <input type="text" class="form-control" asp-for="Email"  readonly/>
+    <br />
+
+    <center>
+        <a asp-controller="Users" asp-action="Edit" class="btn btn-danger">Update</a>
+        <input type="submit" value="@SharedLocalizer["Delete"]" class="btn btn-primary" />
+        <input type="reset" value="@SharedLocalizer["Cancle"]" class="btn btn-danger" />
+    </center>
+
+</form>

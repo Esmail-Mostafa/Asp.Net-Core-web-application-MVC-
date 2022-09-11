@@ -1,0 +1,49 @@
+﻿@model IdentityUser
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+
+<div class="block-header">
+    <h2>@SharedLocalizer["Edit to Department"]</h2>
+</div>
+
+
+<form class="form-group" asp-controller="Users" asp-action="Edit">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+
+    <label asp-for="Id">Id</label>
+    <input type="text" class="form-control" asp-for="Id" / readonly>
+    <br />
+
+
+    <label asp-for="Email">Email</label>
+    <input type="text" class="form-control" asp-for="Email" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+    <br />
+
+    <center>
+        <input type="submit" value="@SharedLocalizer["Save"]" class="btn btn-primary" />
+        <input type="reset" value="@SharedLocalizer["Cancle"]" class="btn btn-danger" />
+    </center>
+
+</form>
+
+
+@section MicrosoftValidation{
+
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+
+
+

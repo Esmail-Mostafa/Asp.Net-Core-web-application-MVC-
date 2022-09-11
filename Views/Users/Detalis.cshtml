@@ -1,0 +1,21 @@
+﻿@model IdentityUser
+@{
+    ViewData["Title"] = "Detalis";
+}
+
+
+
+
+<label asp-for="Id">Id</label>
+<input type="text" class="form-control" asp-for="Id" readonly />
+<br />
+
+
+<label asp-for="Email">Email</label>
+<input type="text" class="form-control" asp-for="Email" readonly />
+<br />
+<br />
+<center>
+    <a asp-controller="Users" asp-action="Edit" class="btn btn-primary">Update </a>
+    <a asp-controller="Users" asp-action="Delete" class="btn btn-danger"> Delete</a>
+</center>

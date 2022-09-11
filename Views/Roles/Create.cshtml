@@ -1,0 +1,45 @@
+﻿
+
+
+@model IdentityRole;
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section bootstrapSelect{
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+
+}
+<div class="block-header">
+    <h2>Create </h2>
+</div>
+
+
+<form class="form-group" asp-controller="Roles" asp-action="Create">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+    <label asp-for="Name">Name</label>
+    <input type="text" class="form-control" asp-for="Name" />
+    <br />
+
+    <center>
+        <input type="submit" value="@SharedLocalizer["Save"]" class="btn btn-primary" />
+        <a asp-controller="Roles" asp-action="Index" class="btn btn-info">cancle</a>
+
+    </center>
+
+</form>
+
+
+@section MicrosoftValidation{
+
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+
+

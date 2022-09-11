@@ -1,0 +1,27 @@
+﻿@model DemoTest.BL.Model.DepartmentVM
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<form class="form-group" asp-controller="Department" asp-action="Delete">
+
+
+
+
+    <label asp-for="Name">@SharedLocalizer["Department Name"] </label>
+    <input type="text" class="form-control" asp-for="Name" />
+    <br />
+
+
+    <label asp-for="Code">@SharedLocalizer["Department Code"] </label>
+    <input type="text" class="form-control" asp-for="Code" />
+    <br />
+
+    <center>
+        <a asp-controller="Department"asp-action="Edit" class="btn btn-danger">Update</a>
+        <input type="submit" value="@SharedLocalizer["Delete"]" class="btn btn-primary" />
+        <input type="reset" value="@SharedLocalizer["Cancle"]" class="btn btn-danger" />
+    </center>
+
+</form>

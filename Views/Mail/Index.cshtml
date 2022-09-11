@@ -1,0 +1,29 @@
+﻿@model DemoTest.BL.Model.MailVM
+
+@{
+    ViewData["Title"] = "Email";
+}
+
+<br />
+
+<br />
+<form asp-controller="Mail" asp-action="SendMail" method="post" class="form-group">
+
+
+    <br />
+    <input type="email" asp-for="Email" class="form-control" placeholder="Enter email" />
+    <br />
+    <br />
+    <input type="text" asp-for="Title" class="form-control" placeholder="Enter Title" />
+    <br />
+
+    <textarea asp-for="Message" rows="4" placeholder="Enter Your Message" class="form-control"></textarea>
+    <br />
+
+    <center>
+        <input type="submit" class="btn btn-primary" value="Send" />
+        <input type="reset" class="btn btn-warning" value="Cancle" />
+    </center>
+</form>
+
+
